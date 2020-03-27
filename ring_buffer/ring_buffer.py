@@ -28,8 +28,7 @@ class RingBuffer:
 				self.current = self.storage.head
 			if self.storage.length == self.capacity:
 				self.storage.tail.next = self.storage.head
-		
-		print(27, self.storage.length, self.capacity)
+		# print(27, self.storage.length, self.capacity)
 
 
 	def get(self):
@@ -44,7 +43,7 @@ class RingBuffer:
 
 		view = self.storage.head
 		list_buffer_contents.append(view.value)
-		print(42, view.next.value)
+		# print(42, view.next.value)
 		while view.next != self.storage.head:
 			list_buffer_contents.append(view.next.value)
 			view = view.next
@@ -66,11 +65,15 @@ class ArrayRingBuffer:
 #endregion
 
 f = RingBuffer(5) # capacity 5
-f.append(0)
-f.append(2)
+f.append("a")
+f.append("s")
+f.append("d")
+f.append("f")
+f.append("g")
+print(f.get())
+
+f.append("0")
+f.append("2")
 f.append(4)
 f.append(6)
-f.append(8)
-f.append(10)
-
 print(f.get())
