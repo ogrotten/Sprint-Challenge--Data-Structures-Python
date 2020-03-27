@@ -19,12 +19,13 @@ class RingBuffer:
 		# 	if size = cap
 		#		then tail has no .next
 		# 		then set tail.next to head
-
 		if self.storage.length == self.capacity:
 			self.current.value = item
 			self.current = self.current.next
 		else:
 			self.storage.add_to_tail(item)
+			if self.storage.length == 1:
+				self.current = self.storage.head
 			if self.storage.length == self.capacity:
 				self.storage.tail.next = self.storage.head
 		
@@ -45,7 +46,7 @@ class RingBuffer:
 		list_buffer_contents.append(view.value)
 		print(42, view.next.value)
 		while view.next != self.storage.head:
-			# list_buffer_contents.append(view.next.value)
+			list_buffer_contents.append(view.next.value)
 			view = view.next
 
 		return list_buffer_contents
