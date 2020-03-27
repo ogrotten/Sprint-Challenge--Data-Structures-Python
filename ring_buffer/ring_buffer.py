@@ -64,16 +64,20 @@ class ArrayRingBuffer:
 		pass
 #endregion
 
-f = RingBuffer(5) # capacity 5
+f = RingBuffer(3) # capacity 5
 f.append("a")
 f.append("s")
 f.append("d")
+print(f.get())
+
 f.append("f")
 f.append("g")
 print(f.get())
 
 f.append("0")
 f.append("2")
+print(f.get())
+
 f.append(4)
 f.append(6)
 print(f.get())
