@@ -6,9 +6,27 @@ class RingBuffer:
         self.capacity = capacity
         self.current = None
         self.storage = DoublyLinkedList()
+		self.size = 0
 
     def append(self, item):
-        pass
+		if self.size = 0
+			# add to the head.
+			pass
+
+		if self.size < self.capacity:
+			# add to the tail.
+			pass
+
+		if self.current == self.storage.head
+			# 
+			pass
+
+		if selft.curren == self.storage.tail
+			pass
+
+		# if none of that, then 
+
+
 
     def get(self):
         # Note:  This is the only [] allowed
