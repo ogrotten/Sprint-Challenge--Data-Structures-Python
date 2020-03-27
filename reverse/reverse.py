@@ -45,27 +45,25 @@ class LinkedList:
 		# if we've gotten here, then the target node isn't in our list
 		return False
 
-	def reverse_list(self, node, prev=None):
+	def reverse_list(self, node):
 		if node is None:
 			return 0
 		if not node.get_next():
-			# print(50,node.value)
 			self.add_to_head(node)
 			return
 
-		print(53,node.value)
 		self.reverse_list(node.get_next())
 		f = node.get_next()
 		f.set_next(node)
 		node.set_next(None)
-		# print(59,f.next_node.value)
 
-k = LinkedList()
 
-k.add_to_head(1)
-k.add_to_head(2)
-k.add_to_head(3)
-k.add_to_head(4)
-k.add_to_head(5)
+f = LinkedList()
 
-print(k.reverse_list(k.head))
+f.add_to_head(1)
+f.add_to_head(2)
+f.add_to_head(3)
+f.add_to_head(4)
+f.add_to_head(5)
+
+print(f.reverse_list(f.head)) 
