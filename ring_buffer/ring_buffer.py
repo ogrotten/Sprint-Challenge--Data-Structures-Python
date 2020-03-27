@@ -45,6 +45,8 @@ class RingBuffer:
 		list_buffer_contents.append(view.value)
 		# print(42, view.next.value)
 		while view.next != self.storage.head:
+			if not view.next:
+				break
 			list_buffer_contents.append(view.next.value)
 			view = view.next
 
@@ -64,7 +66,7 @@ class ArrayRingBuffer:
 		pass
 #endregion
 
-f = RingBuffer(3) # capacity 5
+f = RingBuffer(5) # capacity 5
 f.append("a")
 f.append("s")
 f.append("d")
